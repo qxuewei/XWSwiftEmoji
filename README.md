@@ -1,0 +1,2 @@
+# XWSwiftEmoji
+Emoji swift
