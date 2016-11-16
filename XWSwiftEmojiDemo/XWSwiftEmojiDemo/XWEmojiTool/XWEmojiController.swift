@@ -9,13 +9,19 @@
 import UIKit
 fileprivate let emojiCollectionCellID : String = "emojiCollectionCellID"
 class XWEmojiController: UIViewController {
-
+    fileprivate let emojiManager : EmoticonManager = EmoticonManager()
     fileprivate let emojiCollection : UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: emojiFlowLayout())
     fileprivate let toolBar : UIToolbar = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+//        let emojiManager = EmoticonManager()
+//        for emojiPackage in emojiManager.packages {
+//            for emoji in emojiPackage.emojis {
+////                print("emoji :\(emoji)")
+//            }
+//        }
     }
 }
 
@@ -35,29 +41,58 @@ extension XWEmojiController {
         cons += NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[eCollection]-0-[tBar]-0-|", options: [.alignAllLeft,.alignAllRight], metrics: nil, views: views)
         view.addConstraints(cons)
         
-        preCollectionMethod()
         
+        preCollectionMethod()
+        preToolBarMethod()
     }
     fileprivate func preCollectionMethod() {
-        emojiCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: emojiCollectionCellID)
+        emojiCollection.register(EmoticonViewCell.self, forCellWithReuseIdentifier: emojiCollectionCellID)
         emojiCollection.dataSource = self
+    }
+    fileprivate func preToolBarMethod() {
+        let titles = ["最近","默认","emoji","浪小花"]
+        var items : [UIBarButtonItem] = [UIBarButtonItem]()
+        var index : Int = 0
+        for title in titles {
+            let item = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(toolBarClick(item:)))
+            item.tag = index
+            index += 1
+            items.append(item)
+            items.append(UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+        }
+        items.removeLast()
+        toolBar.setItems(items, animated: true)
         
-        //设置Collection布局
-//        let emojiCollectionViewLayout : UICollectionViewFlowLayout = emojiCollection.collectionViewLayout as! UICollectionViewFlowLayout
-//        let emojiItemWH : CGFloat = UIScreen.main.bounds.width * 0.9
-//        emojiCollectionViewLayout.itemSize = CGSize(width: emojiItemWH, height: emojiItemWH)
-        
+    }
+    
+}
+//MARK: - Selector
+extension XWEmojiController {
+    @objc fileprivate func toolBarClick(item : UIBarButtonItem) {
+        print("item.tag :\(item.tag)")
+        let tag : Int = item.tag
+        guard tag > 1 else {
+            return
+        }
+        let indexPath = IndexPath(item: 0, section: tag)
+        emojiCollection.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
 
 //MARK: - UICollectionDelegate
 extension XWEmojiController : UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return emojiManager.packages.count
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        let package = emojiManager.packages[section]
+        return package.emojis.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: emojiCollectionCellID, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.orange : UIColor.blue
+        let cell : EmoticonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: emojiCollectionCellID, for: indexPath) as! EmoticonViewCell
+//        cell.backgroundColor = indexPath.item % 2 == 1 ? UIColor.orange : UIColor.blue
+        let package : EmoticonPackage = emojiManager.packages[indexPath.section]
+        cell.emoji = package.emojis[indexPath.item]
         return cell
     }
 }
@@ -66,7 +101,7 @@ extension XWEmojiController : UICollectionViewDataSource {
 class emojiFlowLayout : UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
-        let itemWH : CGFloat = UIScreen.main.bounds.width * 0.7
+        let itemWH : CGFloat = UIScreen.main.bounds.width / 7
         itemSize = CGSize(width: itemWH, height: itemWH)
         minimumLineSpacing = 0
         minimumInteritemSpacing = 0
@@ -74,6 +109,8 @@ class emojiFlowLayout : UICollectionViewFlowLayout {
         collectionView?.isPagingEnabled = true
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.showsHorizontalScrollIndicator = false
+        let edgeInsetH : CGFloat = ((collectionView?.bounds.height)! - itemWH * 3) * 0.5
+        collectionView?.contentInset = UIEdgeInsets(top: edgeInsetH, left: 0.00, bottom: edgeInsetH, right: 0.000)
     }
 }
 
