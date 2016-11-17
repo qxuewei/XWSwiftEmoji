@@ -17,6 +17,9 @@ class EmoticonViewCell: UICollectionViewCell {
             }
             emojiBtn.setImage(UIImage(contentsOfFile: (emoji.pngPath) ?? ""), for: .normal)
             emojiBtn.setTitle(emoji.emojiCode, for: .normal)
+            if emoji.isRemove == true {
+                emojiBtn.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
+            }
         }
     }
     override init(frame: CGRect) {

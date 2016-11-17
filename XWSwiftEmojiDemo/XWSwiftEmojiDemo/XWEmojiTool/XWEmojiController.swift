@@ -71,9 +71,6 @@ extension XWEmojiController {
     @objc fileprivate func toolBarClick(item : UIBarButtonItem) {
         print("item.tag :\(item.tag)")
         let tag : Int = item.tag
-        guard tag > 1 else {
-            return
-        }
         let indexPath = IndexPath(item: 0, section: tag)
         emojiCollection.scrollToItem(at: indexPath, at: .left, animated: true)
     }
@@ -90,9 +87,9 @@ extension XWEmojiController : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : EmoticonViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: emojiCollectionCellID, for: indexPath) as! EmoticonViewCell
-//        cell.backgroundColor = indexPath.item % 2 == 1 ? UIColor.orange : UIColor.blue
         let package : EmoticonPackage = emojiManager.packages[indexPath.section]
-        cell.emoji = package.emojis[indexPath.item]
+        let emoji : Emoticon = package.emojis[indexPath.item]
+        cell.emoji = emoji
         return cell
     }
 }

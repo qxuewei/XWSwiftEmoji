@@ -38,6 +38,18 @@ class Emoticon: NSObject {
     //数据处理
     var pngPath : String? = nil
     var emojiCode : String? = nil
+    var isRemove : Bool = false
+    var isEmpty : Bool = false
+    
+    init(isRemove : Bool) {
+        super.init()
+        self.isRemove = isRemove
+    }
+    
+    init(isEmpty : Bool) {
+        super.init()
+        self.isEmpty = isEmpty
+    }
     
     init(dict : [String : String]) {
         super.init()
