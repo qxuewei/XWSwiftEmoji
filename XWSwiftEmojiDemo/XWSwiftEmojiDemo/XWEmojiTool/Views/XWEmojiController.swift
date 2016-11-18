@@ -9,19 +9,22 @@
 import UIKit
 fileprivate let emojiCollectionCellID : String = "emojiCollectionCellID"
 class XWEmojiController: UIViewController {
+    var emojiCallBack : (_ emoji : Emoticon)->()
     fileprivate let emojiManager : EmoticonManager = EmoticonManager()
     fileprivate let emojiCollection : UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: emojiFlowLayout())
     fileprivate let toolBar : UIToolbar = UIToolbar()
+    init(emojiCallBack : @escaping (_ emoji : Emoticon)->()) {
+        self.emojiCallBack = emojiCallBack
+        super.init(nibName: nil, bundle: nil)
+
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-//        let emojiManager = EmoticonManager()
-//        for emojiPackage in emojiManager.packages {
-//            for emoji in emojiPackage.emojis {
-////                print("emoji :\(emoji)")
-//            }
-//        }
     }
 }
 
@@ -41,13 +44,13 @@ extension XWEmojiController {
         cons += NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[eCollection]-0-[tBar]-0-|", options: [.alignAllLeft,.alignAllRight], metrics: nil, views: views)
         view.addConstraints(cons)
         
-        
         preCollectionMethod()
         preToolBarMethod()
     }
     fileprivate func preCollectionMethod() {
         emojiCollection.register(EmoticonViewCell.self, forCellWithReuseIdentifier: emojiCollectionCellID)
         emojiCollection.dataSource = self
+        emojiCollection.delegate = self
     }
     fileprivate func preToolBarMethod() {
         let titles = ["最近","默认","emoji","浪小花"]
@@ -69,15 +72,31 @@ extension XWEmojiController {
 //MARK: - Selector
 extension XWEmojiController {
     @objc fileprivate func toolBarClick(item : UIBarButtonItem) {
-        print("item.tag :\(item.tag)")
         let tag : Int = item.tag
         let indexPath = IndexPath(item: 0, section: tag)
         emojiCollection.scrollToItem(at: indexPath, at: .left, animated: true)
     }
+    fileprivate func insertEmojiToRecent(emoji : Emoticon) {
+        //删除,空白不需要插入
+        guard emoji.isEmpty == false, emoji.isRemove == false else {
+            return
+        }
+        
+        //最近分组
+        let recentEmojiPackage = emojiManager.packages.first!
+        
+        if recentEmojiPackage.emojis.contains(emoji) {
+            let index = recentEmojiPackage.emojis.index(of: emoji)
+            recentEmojiPackage.emojis.remove(at: index!)
+        }else{
+            recentEmojiPackage.emojis.remove(at: recentEmojiPackage.emojis.count - 2)
+        }
+        recentEmojiPackage.emojis.insert(emoji, at: 0)
+    }
 }
 
 //MARK: - UICollectionDelegate
-extension XWEmojiController : UICollectionViewDataSource {
+extension XWEmojiController : UICollectionViewDataSource,UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return emojiManager.packages.count
     }
@@ -91,6 +110,14 @@ extension XWEmojiController : UICollectionViewDataSource {
         let emoji : Emoticon = package.emojis[indexPath.item]
         cell.emoji = emoji
         return cell
+    }
+    ///点击UICollectionViewCell代理方法
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let package = emojiManager.packages[indexPath.section]
+        let emoji = package.emojis[indexPath.item]
+        insertEmojiToRecent(emoji: emoji)
+        //将选择的表情传出去
+        emojiCallBack(emoji)
     }
 }
 

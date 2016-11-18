@@ -7,22 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E09F4181DDEEE68006CD681 /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09F4171DDEEE68006CD681 /* EmoticonAttachment.swift */; };
+		2E09F42A1DDEFB5E006CD681 /* compose_emotion_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E09F4231DDEFB5E006CD681 /* compose_emotion_delete@2x.png */; };
+		2E09F42B1DDEFB5E006CD681 /* compose_emotion_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E09F4241DDEFB5E006CD681 /* compose_emotion_delete@3x.png */; };
+		2E09F42C1DDEFB5E006CD681 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E09F4251DDEFB5E006CD681 /* Emoticons.bundle */; };
+		2E09F42D1DDEFB5E006CD681 /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09F4271DDEFB5E006CD681 /* EmoticonViewCell.swift */; };
+		2E09F42E1DDEFB5E006CD681 /* UITextView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09F4281DDEFB5E006CD681 /* UITextView-Extension.swift */; };
+		2E09F42F1DDEFB5E006CD681 /* XWEmojiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09F4291DDEFB5E006CD681 /* XWEmojiController.swift */; };
 		2E632CC51DD9B75E00BF212F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E632CC41DD9B75E00BF212F /* AppDelegate.swift */; };
 		2E632CC71DD9B75E00BF212F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E632CC61DD9B75E00BF212F /* ViewController.swift */; };
 		2E632CCA1DD9B75E00BF212F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E632CC81DD9B75E00BF212F /* Main.storyboard */; };
 		2E632CCC1DD9B75E00BF212F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E632CCB1DD9B75E00BF212F /* Assets.xcassets */; };
 		2E632CCF1DD9B75E00BF212F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E632CCD1DD9B75E00BF212F /* LaunchScreen.storyboard */; };
-		2E632CD81DD9C26200BF212F /* XWEmojiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E632CD71DD9C26200BF212F /* XWEmojiController.swift */; };
-		2EA7E2B91DDC3AE7005B5BFA /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7E2B81DDC3AE7005B5BFA /* Emoticons.bundle */; };
 		2EA7E2BC1DDC3B47005B5BFA /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7E2BB1DDC3B47005B5BFA /* Emoticon.swift */; };
 		2EA7E2BE1DDC3B5D005B5BFA /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7E2BD1DDC3B5D005B5BFA /* EmoticonPackage.swift */; };
 		2EA7E2C01DDC3B6B005B5BFA /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7E2BF1DDC3B6B005B5BFA /* EmoticonManager.swift */; };
-		2EA7E2C21DDC64D2005B5BFA /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7E2C11DDC64D2005B5BFA /* EmoticonViewCell.swift */; };
-		2EA7E2C51DDD5AF0005B5BFA /* compose_emotion_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7E2C31DDD5AF0005B5BFA /* compose_emotion_delete@2x.png */; };
-		2EA7E2C61DDD5AF0005B5BFA /* compose_emotion_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7E2C41DDD5AF0005B5BFA /* compose_emotion_delete@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E09F4171DDEEE68006CD681 /* EmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
+		2E09F4231DDEFB5E006CD681 /* compose_emotion_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@2x.png"; sourceTree = "<group>"; };
+		2E09F4241DDEFB5E006CD681 /* compose_emotion_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@3x.png"; sourceTree = "<group>"; };
+		2E09F4251DDEFB5E006CD681 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		2E09F4271DDEFB5E006CD681 /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
+		2E09F4281DDEFB5E006CD681 /* UITextView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView-Extension.swift"; sourceTree = "<group>"; };
+		2E09F4291DDEFB5E006CD681 /* XWEmojiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWEmojiController.swift; sourceTree = "<group>"; };
 		2E632CC11DD9B75E00BF212F /* XWSwiftEmojiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWSwiftEmojiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E632CC41DD9B75E00BF212F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E632CC61DD9B75E00BF212F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,14 +39,9 @@
 		2E632CCB1DD9B75E00BF212F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E632CCE1DD9B75E00BF212F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E632CD01DD9B75E00BF212F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E632CD71DD9C26200BF212F /* XWEmojiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWEmojiController.swift; sourceTree = "<group>"; };
-		2EA7E2B81DDC3AE7005B5BFA /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		2EA7E2BB1DDC3B47005B5BFA /* Emoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
 		2EA7E2BD1DDC3B5D005B5BFA /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		2EA7E2BF1DDC3B6B005B5BFA /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
-		2EA7E2C11DDC64D2005B5BFA /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
-		2EA7E2C31DDD5AF0005B5BFA /* compose_emotion_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@2x.png"; sourceTree = "<group>"; };
-		2EA7E2C41DDD5AF0005B5BFA /* compose_emotion_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emotion_delete@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E09F4221DDEFB5E006CD681 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E09F4231DDEFB5E006CD681 /* compose_emotion_delete@2x.png */,
+				2E09F4241DDEFB5E006CD681 /* compose_emotion_delete@3x.png */,
+				2E09F4251DDEFB5E006CD681 /* Emoticons.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2E09F4261DDEFB5E006CD681 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E09F4271DDEFB5E006CD681 /* EmoticonViewCell.swift */,
+				2E09F4281DDEFB5E006CD681 /* UITextView-Extension.swift */,
+				2E09F4291DDEFB5E006CD681 /* XWEmojiController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2E632CB81DD9B75E00BF212F = {
 			isa = PBXGroup;
 			children = (
@@ -84,12 +108,9 @@
 		2E632CD61DD9C24500BF212F /* XWEmojiTool */ = {
 			isa = PBXGroup;
 			children = (
-				2EA7E2C31DDD5AF0005B5BFA /* compose_emotion_delete@2x.png */,
-				2EA7E2C41DDD5AF0005B5BFA /* compose_emotion_delete@3x.png */,
+				2E09F4221DDEFB5E006CD681 /* Resources */,
+				2E09F4261DDEFB5E006CD681 /* Views */,
 				2EA7E2BA1DDC3B02005B5BFA /* Model */,
-				2EA7E2B81DDC3AE7005B5BFA /* Emoticons.bundle */,
-				2E632CD71DD9C26200BF212F /* XWEmojiController.swift */,
-				2EA7E2C11DDC64D2005B5BFA /* EmoticonViewCell.swift */,
 			);
 			path = XWEmojiTool;
 			sourceTree = "<group>";
@@ -100,6 +121,7 @@
 				2EA7E2BB1DDC3B47005B5BFA /* Emoticon.swift */,
 				2EA7E2BD1DDC3B5D005B5BFA /* EmoticonPackage.swift */,
 				2EA7E2BF1DDC3B6B005B5BFA /* EmoticonManager.swift */,
+				2E09F4171DDEEE68006CD681 /* EmoticonAttachment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,12 +186,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E09F42A1DDEFB5E006CD681 /* compose_emotion_delete@2x.png in Resources */,
+				2E09F42C1DDEFB5E006CD681 /* Emoticons.bundle in Resources */,
 				2E632CCF1DD9B75E00BF212F /* LaunchScreen.storyboard in Resources */,
-				2EA7E2B91DDC3AE7005B5BFA /* Emoticons.bundle in Resources */,
-				2EA7E2C51DDD5AF0005B5BFA /* compose_emotion_delete@2x.png in Resources */,
+				2E09F42B1DDEFB5E006CD681 /* compose_emotion_delete@3x.png in Resources */,
 				2E632CCC1DD9B75E00BF212F /* Assets.xcassets in Resources */,
 				2E632CCA1DD9B75E00BF212F /* Main.storyboard in Resources */,
-				2EA7E2C61DDD5AF0005B5BFA /* compose_emotion_delete@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,11 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EA7E2C21DDC64D2005B5BFA /* EmoticonViewCell.swift in Sources */,
+				2E09F42D1DDEFB5E006CD681 /* EmoticonViewCell.swift in Sources */,
+				2E09F42F1DDEFB5E006CD681 /* XWEmojiController.swift in Sources */,
 				2E632CC71DD9B75E00BF212F /* ViewController.swift in Sources */,
-				2E632CD81DD9C26200BF212F /* XWEmojiController.swift in Sources */,
+				2E09F4181DDEEE68006CD681 /* EmoticonAttachment.swift in Sources */,
 				2EA7E2BE1DDC3B5D005B5BFA /* EmoticonPackage.swift in Sources */,
 				2EA7E2C01DDC3B6B005B5BFA /* EmoticonManager.swift in Sources */,
+				2E09F42E1DDEFB5E006CD681 /* UITextView-Extension.swift in Sources */,
 				2E632CC51DD9B75E00BF212F /* AppDelegate.swift in Sources */,
 				2EA7E2BC1DDC3B47005B5BFA /* Emoticon.swift in Sources */,
 			);
